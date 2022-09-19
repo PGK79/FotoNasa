@@ -56,6 +56,7 @@ public class Main {
         }
 
         responseWithPhoto.close();
+
         httpClient.close();
     }
 }
