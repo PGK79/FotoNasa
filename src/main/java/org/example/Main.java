@@ -39,14 +39,14 @@ public class Main {
 
         response.close();
 
-        HttpGet requestDos = new HttpGet(posts.url);
+        HttpGet requestDos = new HttpGet(posts.getUrl());
         requestDos.setHeader(HttpHeaders.ACCEPT, ContentType.APPLICATION_JSON.getMimeType());
 
         CloseableHttpResponse responseWithPhoto = httpClient.execute(requestDos);
 
         byte[] bytes = responseWithPhoto.getEntity().getContent().readAllBytes();
 
-        String[] names = posts.url.split("/");
+        String[] names = posts.getUrl().split("/");
         String fileName = names[names.length - 1];
 
         try (FileOutputStream fos = new FileOutputStream(fileName)) {
