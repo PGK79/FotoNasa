@@ -15,7 +15,6 @@ public class Photo {
     private String url;
 
     public Photo() {
-
     }
 
     public String getCopyright() {
